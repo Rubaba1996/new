@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher</title>
+    <link rel="stylesheet" href="/css/Teacherstyle.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="icon" href="tech.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    
+</head>
+<body>
+    <div class="main1">
+        <div class="main2">
+            <img class="t1" src="./photos/tech.png">
+            <hr class="hr">
+            <div class="t2">
+                <img class="i1" src="home.png">
+                <a href=""><p class="tt1">İdarəetmə paneli</p></a>
+            </div>
+            <div class="t3">
+                <img class="i2" src="tick.png">
+                <a href=""><p class="tt2">Testlər</p></a>
+            </div>
+            <div class="t4">
+                <img class="i3" src="message.png">
+                <a href=""><p class="tt3">Cavablar</p></a>
+            </div>
+            <div class="t5">
+                <img class="i4" src="list.png">
+                <a href=""><p class="tt4">Proqramlar</p></a>
+            </div>
+            <hr class="hr1">
+            <img class="human" src="./photos/human.png">
+            <h5 class="client">{{ Auth::user()->name }}</h5>
+            <p class="client1">Date: {{ Auth::user()->date }}</p>
+            <p class="client2">Number: {{ Auth::user()->number }}</p>
+            <p class="client3">Email: {{ Auth::user()->email }}</p>
+            <p class="client4">Id: {{ Auth::user()->id }}</p>
+            <a href=""><button class="btn5">Düzəliş et</button></a>
+        </div>
+
+        <div class="mainflex">
+            <div class="mainfl">
+                <div class="maincc">
+                    <ul class="ul1">
+                        <li class="li1">Hamısı</li>
+                        <li class="li2">Aktiv</li>
+                        <li class="li3">Qeyri-aktiv</li>
+                        <li class="li4">Layihələndirmə</li>
+                    </ul>
+                </div>
+                <div class="maincc1">
+                    <!-- {{-- <input class="search1" type="text" placeholder="Ada görə axtarış"> --}}
+                    {{-- <img class="search" src="search.png"> --}} -->
+                </div>
+                <div class="maincc2">
+                    <div class="mainc">
+                        <button class="btn6"><img class="plus" src="./photos/plus.png"></button>
+                        <a href="{{ route('newTest') }}"><p class="new">Yenisini yarat</p></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main3">
+                <div>
+                    <table id="myTable">
+                        <thead class="thead">
+                            <tr>
+                                <th class="th1">id</th>
+                                <th class="th1">Fəhn</th>
+                                <th class="th1">Mövzu</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                            <!-- данные идут с контроллера и из базы данных  -->
+                            <td>Punkt1</td>
+                            <td>Punkt2</td>
+                            <td>Punkt3</td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                    <script>
+                        $(document).ready(function () {
+                        const table = $('#myTable').DataTable({
+                            fixedHeader: true,
+                            info: true,
+                            paging: false,
+                            processing: true,
+                    
+                          
+                        });
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
